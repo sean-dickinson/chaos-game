@@ -1,0 +1,19 @@
+{
+  "name": "chaos-game",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "^4.5.4",
+    "vite": "^2.9.9"
+  },
+  "dependencies": {
+    "@hotwired/stimulus": "^3.0.1",
+    "@mathigon/euclid": "^1.1.1",
+    "@vytant/stimulus-decorators": "^1.1.0"
+  }
+}

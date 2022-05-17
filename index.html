@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chaos Game</title>
+  </head>
+  <body>
+    <main>
+      <div class="chaos-wrapper" data-controller="chaos-game">
+        <div class="controls">
+          <div class="input-wrapper">
+            <input data-chaos-game-target="stepMode" data-action="chaos-game#draw" type="checkbox" name="stepMode">
+            <label for="stepMode">Step Mode</label>
+          </div>
+          <div data-chaos-game-target="steps" class="input-wrapper steps hidden">
+            <div data-chaos-game-target="stepLabel">Step 1</div>
+            <button data-chaos-game-direction-param="back" data-action="chaos-game#moveStep">Back</button>
+            <button data-chaos-game-direction-param="next" data-action="chaos-game#moveStep">Next</button>
+          </div>  
+          <div class="input-wrapper">
+            <input data-chaos-game-target="points" data-action="chaos-game#draw" value="1000" type="range" name="points" min="0" max="5000" step="100">
+            <label data-chaos-game-target="pointsLabel" for="points">Number of points</label>
+          </div>  
+          <div class="input-wrapper">
+            <input data-chaos-game-target="fraction" data-action="chaos-game#play" value="0.5" type="range" name="fraction" min="0.1" max="0.9" step="0.05">
+            <label data-chaos-game-target="fractionLabel" for="fraction">Fraction Distance</label>
+          </div>
+          <div class="input-wrapper">
+            <button data-action="chaos-game#play">Re-roll</button>  
+            <button data-action="chaos-game#reset">Reset</button>  
+          </div>
+        </div>
+        <div class="canvas-wrapper">
+          <canvas data-action="click->chaos-game#setStartPoint" data-chaos-game-target="canvas" width="800" height="800"></canvas>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
