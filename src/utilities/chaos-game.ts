@@ -1,9 +1,7 @@
 import {Point} from '@mathigon/euclid';
 
-export function getNextPoint(start: Point, end: Point, fraction: number ):Point {
-    const newX = (start.x + end.x) * fraction;
-    const newY = (start.y + end.y) * fraction;
-    return new Point(newX, newY);
+export function getNextPoint(start: Point, end: Point, fraction: number ): Point {
+    return Point.interpolate(start, end, fraction)
 }
 
 export function sample<Type>(choices: Type[]): Type {
