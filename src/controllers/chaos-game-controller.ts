@@ -107,7 +107,7 @@ export default class extends Controller {
       return;
     }
 
-    drawCanvas(ctx, new Circle(this.startPoint, 2), { fill: "#f00" });
+    drawCanvas(ctx, new Circle(this.startPoint, 4), { fill: "#f00" });
     let i = 0;
 
     let sliceEnd = parseInt(this.pointsTarget.value);
@@ -115,10 +115,10 @@ export default class extends Controller {
       sliceEnd = this.step;
     }
     for (const p of this.allPoints.slice(1, sliceEnd)) {
-      const circle = new Circle(p, 2);
+      const circle = new Circle(p, 4);
       const style = { fill: "#0f0" };
       if (i < 20) {
-        style.fill = "#900";
+        style.fill = "#c90303";
       }
       drawCanvas(ctx, circle, style);
       i++;
